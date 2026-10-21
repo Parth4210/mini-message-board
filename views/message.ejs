@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message · Mini Message Board</title>
+    <%- include("partials/styles") %>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="/">mini<span>board</span></a>
+            <a class="nav-link" href="/">Back to messages</a>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="form-card">
+            <p class="eyebrow">Message details</p>
+            <h1><%= message.text %></h1>
+            <p class="message__author">Posted by <%= message.user %></p>
+            <p class="message__meta"><%= message.added %></p>
+        </section>
+    </main>
+</body>
+</html>

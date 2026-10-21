@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New message · Mini Message Board</title>
+    <%- include("partials/styles") %>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="/">mini<span>board</span></a>
+            <a class="nav-link" href="/">Back to messages</a>
+        </div>
+    </header>
+    <main class="page">
+        <section class="form-card">
+            <p class="eyebrow">Add to the board</p>
+            <h1><%= title %></h1>
+            <form method="POST" action="/new">
+                <div class="field">
+                    <label for="author">Your name</label>
+                    <input type="text" name="author" id="author" placeholder="e.g. Parth" autocomplete="name">
+                </div>
+                <div class="field">
+                    <label for="msg-text">Message</label>
+                    <input type="text" name="msgText" id="msg-text" placeholder="What would you like to say?">
+                </div>
+                <button class="button" type="submit">Publish message</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

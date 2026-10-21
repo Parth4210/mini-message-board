@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message Board</title>
+    <%- include("partials/styles") %>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="/">mini<span>board</span></a>
+            <a class="nav-link" href="/new">Write a message</a>
+        </div>
+    </header>
+    <main class="page">
+        <div class="page__intro">
+            <div>
+                <p class="eyebrow">Community notes</p>
+                <h1>Small messages,<br>worth sharing.</h1>
+            </div>
+        </div>
+        <ul class="message-list">
+            <% messages.forEach((message, index)=> { %>
+                <li class="message">
+                    <p class="message__text">
+                        <%= message.text %>
+                    </p>
+
+                    <div class="message__meta">
+                        <span class="message__author">
+                            <%= message.user %>
+                        </span>
+
+                        <time>
+                            <%= message.added %>
+                        </time>
+
+                        <a class="nav-link" href="/message/<%= index %>">
+                            Open
+                        </a>
+                    </div>
+                </li>
+                <% }) %>
+        </ul>
+    </main>
+</body>
+
+</html>
